@@ -1,0 +1,7 @@
+// example data
+{
+    "username":"blah",
+    "password":"smth else",
+    "user_id": "10101",
+    "user_auth": "0dkf01-example"
+}
