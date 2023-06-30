@@ -72,8 +72,7 @@ Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) an
 ```bash
 # Clone this project
 $ git clone https://github.com/RazdorChat/razdor_GUI
-
-# Access
+# cd into the dir
 $ cd radzor_gui
 
 # Install dependencies
