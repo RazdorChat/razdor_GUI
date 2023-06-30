@@ -9,10 +9,10 @@
 <body class="dark-theme">
     <img class="backdrop" src="../static/img/bgimage.jpg">
     <div class="account">
-        <div class="grid-container" style="text-align: center;">
+        <div class="grid-container">
             <div class="item1" style="grid-column-start: 1; grid-column-end: 4;">
                 <div style="font-size: xx-large; color: #D98F8F; text-align: center;" class="floating">
-                    Signup for a Razdor account
+                    Login to an <strong>existing</strong> account
                 </div>
             </div>
             <div class="item2"></div>
@@ -23,13 +23,15 @@
             <div class="item7"></div>
             <div class="item8"></div>
             <div class="item9">
-                <form action="/signup_account" method="get" id="signup" style="padding: 10px;">
+                <form action="/login_account" method="get" id="login">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username"><br><br>
+                    <label for="discrim"></label>
+                    <input type="text" id="username" placeholder="username" name="username"> #
+                    <input type="text" id="discrim" placeholder="discriminator" name="discrim"><br><br>
                     <label for="password">Password:</label>
                     <input type="password" id="password" name="password"><br><br>
                 </form>
-                <button type="submit" form="signup" class="button is-rounded" style="width: 50%; font-size: larger;" autofocus type="button">Signup</button>
+                <button type="submit" form="login" class="button is-rounded" style="width: 50%;" autofocus type="button">Submit</button>
                 <p style="font-size: small; padding-bottom: 10px;"><a href="/account">(go back)</a></p>
             </div>
             <div class="item10"></div>

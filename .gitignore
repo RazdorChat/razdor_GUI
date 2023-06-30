@@ -1,2 +1,6 @@
 /src/tests
 /src/app/__pycache__
+/src/data/userdata_exp.jsonc
+/src/data/userdata.json
+/src/data/userdata1.json
+/src/websocket

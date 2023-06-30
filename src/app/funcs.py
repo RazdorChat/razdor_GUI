@@ -1,4 +1,4 @@
-# This file is for API related functions
+# This file is for user/account related functions
 
 import requests, json
 
@@ -13,3 +13,14 @@ def create_acc(username, password):
     })
     json_res = json.loads(response.content.decode())
     return json_res
+
+
+def login_acc(username ,password, discrim):
+    response = requests.post(f"{url}/user/{username}/{discrim}/authkey", json={
+        "auth":password
+    })
+    json_res = json.loads(response.content.decode())
+    if json_res["op"] == "Created.":
+        return json_res["id"]
+    else:
+        return "Fail"

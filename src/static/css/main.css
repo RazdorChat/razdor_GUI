@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import "../css/modesta.css";
+
+
+body{
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    /*background-image: linear-gradient(to right, #5a5a5a , #535353);*/
+    background-color: #2C2F33;
+    font-size: large;
+}
+
+a:link {
+  color: #D98F8F;
+  text-decoration: none;
+}
+
+/* visited link */
+a:visited {
+  color: #D98F8F;
+  text-decoration: none;
+}
+
+/* mouse over link */
+a:hover {
+  color: #D98F8F;
+  font-size: medium;
+  text-decoration: none;
+
+}
+
+/* selected link */
+a:active {
+  color: #D98F8F;
+  text-decoration: none;
+}
+
+ /* width */
+ ::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2C2F33;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(177, 177, 177, 0.7);
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #D98F8F;
+}
+
+.backdrop{
+  width: 100%;
+  height: 100vh;
+  filter: brightness(55%) blur(4px);
+}
+
+.account{
+  color: white;
+  background-color: rgba(44, 47, 51, 0.8);
+  position: absolute;
+  top: 15%;
+  left: 11%;
+  width: 75%;
+  padding: 25px;
+}
+
+.homepage{
+  color: white;
+  background-color: #2C2F33;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  row-gap: 5px;
+  column-gap: 2px;
+  padding: 5px;
+}
+
+.floating { 
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  text-align: center;
+  margin-left: 30px;
+  margin-top: 5px;
+}
+
+@keyframes floating {
+  0% { transform: translate(0,  0px); }
+  50%  { transform: translate(0, 15px); }
+  100%   { transform: translate(0, -0px); }   
+}
