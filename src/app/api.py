@@ -35,5 +35,3 @@ def get_dm_msgs(id : int, friends_id : int, authkey : str):
     })
     json_res = json.loads(response.content.decode())
     return json_res
-
-#print(get_dm_msgs(4165834893111277949, ,"wt1Jy7EamAfRo415tO1N64RX3wsGukOwZRhXZo11exI"))        
