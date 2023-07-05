@@ -2,7 +2,7 @@
 
 import requests, json
 
-config = json.load(open("vars.json", "r"))
+config = json.load(open("config.json", "r"))
 VER = config["VER"]
 url = config["URL"]
 
@@ -27,3 +27,13 @@ def get_username(id : int):
     response = requests.get(f"{url}/user/{id}")
     json_res = json.loads(response.content.decode())
     return json_res
+
+def get_dm_msgs(id : int, friends_id : int, authkey : str):
+    response = requests.get(f"{url}/message/channel/{friends_id}/messages", json={
+        "auth": authkey,
+        "requester": id
+    })
+    json_res = json.loads(response.content.decode())
+    return json_res
+
+#print(get_dm_msgs(4165834893111277949, ,"wt1Jy7EamAfRo415tO1N64RX3wsGukOwZRhXZo11exI"))        

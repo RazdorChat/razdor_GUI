@@ -2,7 +2,7 @@
 
 import requests, json
 
-config = json.load(open("vars.json", "r"))
+config = json.load(open("config.json", "r"))
 VER = config["VER"]
 url = config["URL"]
 

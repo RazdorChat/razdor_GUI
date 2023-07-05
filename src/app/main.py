@@ -22,7 +22,7 @@ template_dir = "../template"
 # Create jinja object
 jinja = SanicJinja2(app, pkg_name="main", loader=FileSystemLoader(searchpath=template_dir))
 
-config = json.load(open("vars.json", "r"))
+config = json.load(open("config.json", "r"))
 VER = config["VER"]
 url = config["URL"]
 
@@ -78,6 +78,7 @@ async def account_create(request):
     passw = request.args.get("password")
 
     user_create = create_acc(usern, passw)
+    print(user_create)
     if user_create["op"] == "Created.":
         user_display_details = get_username(user_create["id"])
         userdata = {
