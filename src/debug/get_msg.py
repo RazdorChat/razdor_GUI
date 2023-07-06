@@ -17,4 +17,5 @@ gotten_msgs = requests.get(f"{url}/message/user/{msgs_to_get_from}/messages", js
     "requester": user_data["user_id"]
 })
 
-print(gotten_msgs.content.decode())
+gotten_msgs_json = json.loads(gotten_msgs.content.decode())
+print(gotten_msgs_json["msgs"][0]["content"])

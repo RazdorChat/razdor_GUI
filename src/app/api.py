@@ -18,8 +18,7 @@ def accept_req(authkey : str, id : int, friend_id : int):
         "auth" : authkey,
         "requester" : id,
         "parent" : friend_id
-    })
-    
+    })    
     json_res = json.loads(response.content.decode())
     return json_res
 
@@ -35,3 +34,4 @@ def get_dm_msgs(id : int, friends_id : int, authkey : str):
     })
     json_res = json.loads(response.content.decode())
     return json_res
+
