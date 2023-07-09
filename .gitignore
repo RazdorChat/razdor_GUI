@@ -5,3 +5,5 @@
 /src/data/userdata1.json
 /src/websocket
 /src/ws
+/src/boost/api.dll
+/src/boost/api.h
