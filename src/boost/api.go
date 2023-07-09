@@ -13,7 +13,7 @@ import (
 
 var URL = "https://razdor.chat/api"
 
-/*This is for Getting username*/
+/*This is for Getting username from api*/
 //export get_username
 func get_username(username string) string{
     resp, err := http.Get(URL+"/user/"+username)

@@ -10,4 +10,4 @@ To build the .dll files necessary you need GCC and Go installed on your windows 
 cd app/boost #cd into dir
 go build -o api.dll -buildmode=c-shared # Build dll files
 ```
-Then you're done!
+Then you're done! (have fun with extra speed)
