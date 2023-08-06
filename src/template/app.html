@@ -18,6 +18,9 @@
             <p>{{ item }}</p>
         </button><br/><br/>
         {% endfor %}
+        {% if not friends %}
+        <p style="font-size: smaller;">No friends😭</p>
+        {% endif %}
     </div>
     <script>
     var buttons = document.querySelectorAll('.friends_list_button');

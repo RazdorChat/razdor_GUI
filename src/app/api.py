@@ -47,5 +47,6 @@ def get_dm_msgs(id : int, friends_id : int, authkey : str):
         "requester": id
     })
     json_res = json.loads(response.content.decode())
+    print(json_res)
     return json_res
 

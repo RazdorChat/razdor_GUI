@@ -16,8 +16,6 @@ from gevent.pywsgi import WSGIServer
 from funcs import *
 from api import *
 
-import ctypes
-
 
 app = Sanic(__name__)
 # Load static files.
@@ -31,16 +29,6 @@ config = json.load(open("config.json", "r"))
 VER = config["VER"]
 url = config["URL"]
 boost = config["Boost"]
-if boost == "True":
-    boost = ctypes.CDLL("../boost/api.dll")
-    get_username_boost = boost.get_username
-    
-elif boost == "False":
-    print("Boost is disabled!")
-    
-else:
-    print("Invalid Boost option in config.json!")
-    exit(0)
 
 if os.path.exists("../data/userdata.json"):
     user_config = json.load(open("../data/userdata.json", "r"))
@@ -95,10 +83,7 @@ async def message_viewer(request, id):
     try:
         msgs = reversed(dm_msgs['msgs'])
         for i in dm_msgs["msgs"]:
-            if boost == "True":
-                msg_username = get_username_boost(i["author"])
-            else:
-                msg_username = get_username(i["author"])
+            msg_username = get_username(i["author"])
     except:
         msgs = ""
     try:
@@ -136,10 +121,7 @@ async def friendspage(request):
 
 @app.route("/app/user/friends/<id>")
 async def accept_friend_request(request, id):
-    if boost == "True":
-        friend_username = get_username_boost(id)
-    else:
-        friend_username = get_username(id)
+    friend_username = get_username(id)
     relations_list = get_user_relations(userid, user_auth)
     friends_list = []
     friends_id_list = []
@@ -222,16 +204,23 @@ def start_webview():
     webview.start()
 
 def start_server():
-    app.run(host='0.0.0.0', port=80, access_log=False, debug=False, workers=1) # NOTE: TURN DEBUG ON FOR ERRORS
+    app.run(host='0.0.0.0', port=80, debug=True, access_log=False, workers=1) # NOTE: TURN DEBUG ON FOR ERRORS
+
     
-    #http_server = WSGIServer(("localhost", 80), app) # you might need to switch to Uvicorn for this
-    #http_server.serve_forever()
-    #app.run(port=80)
+def start_boost_server():
+    os.system("start ../boost/boost.exe")
 
 # Load templates
 app.static("/template", template_dir, name='Template')
 
 if __name__ == '__main__':
     multiprocessing.Process(target=start_webview).start()
+    if boost == "True":
+        multiprocessing.Process(target=start_boost_server).start()                       
+    elif boost == "False":
+        print("Boost is disabled!")
+    else:
+        print("Invalid Boost option in config.json!")
+        sys.exit(0)
     start_server()
     sys.exit(0)
