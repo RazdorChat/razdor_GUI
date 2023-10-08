@@ -90,7 +90,7 @@ $ python3 main.py
 This project is under license from (license is being decided). For more details, see the [LICENSE](LICENSE.md) file.
 
 
-Made with :heart: by <a href="https://github.com/Serbirial" target="_blank">Serbirial</a> and <a href="https://github.com/Superpythonguy" target="_blank">Superpythonguy</a>
+Made with :heart: by <a href="https://github.com/Serbirial" target="_blank">Serbirial</a> and <a href="https://github.com/babymu5k" target="_blank">Babymusk</a>
 
 &#xa0;
 
